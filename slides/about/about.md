@@ -3,6 +3,6 @@
 # Why Use Cucumber?
 
 * Promotes Behavior Driven Development (BDD)
-* Encourages minimal implemenations
+* Encourages minimal implementations
 * Written in a language clients can read and write
-* Side effects include accidental integration testing
+* Side effects may include accidental integration testing

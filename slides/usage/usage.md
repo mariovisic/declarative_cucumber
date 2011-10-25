@@ -106,9 +106,9 @@
 # But firstly, what is Imperative and Declarative?
 <!SLIDE declarative-own-example-2>
 Imperative means that you write each step that needs to be taken to
-complte the outcome, for exaple fill the email form element.
+complete the outcome, for example "fill in the email form input".
 <!SLIDE declarative-own-example-3>
-Declarative means that you write the broader outcome for the scenario,
+Declarative means that you write the outcome for the scenario,
 which is how we write our user stories and how a client thinks of the
 parts of their project.
 
@@ -139,6 +139,9 @@ The individual steps are not as important.
       click_button 'Sign in'
       page.should have_content 'Signed in'
     end
+
+<!SLIDE declarative-own-example-6>
+# Where do we put the `fill_in_my_details` method?
 
 <!SLIDE declarative-own-example-6>
     @@@ ruby

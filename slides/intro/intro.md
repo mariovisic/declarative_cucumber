@@ -11,6 +11,6 @@
 # About Me
 
 ## Mario Visic
-### Developer At the Frontier Group
+### Developer at the Frontier Group
 
 ![Mario Visic](mario_visic.jpg)
