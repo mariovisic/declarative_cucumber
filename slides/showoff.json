@@ -1,0 +1,10 @@
+{
+  "name": "Cucumber",
+  "description": "Presentation on the BDD tool Cucumber",
+  "sections": [
+    {"section":"intro"},
+    {"section":"about"},
+    {"section":"setup"},
+    {"section":"usage"}
+  ]
+}

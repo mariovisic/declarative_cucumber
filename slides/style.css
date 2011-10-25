@@ -1,0 +1,15 @@
+body { 
+  color: #666;
+}
+
+h1 {
+  color: #0099dd;
+}
+
+.about-me img{
+  width: 80%;
+}
+
+.setup-title h1 {
+  color: green;
+}
