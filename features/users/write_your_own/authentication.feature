@@ -1,4 +1,4 @@
-Feature: Authentication
+Feature: Authentication (Web steps + Own Steps)
   As A User
   In order to gain access to sknet
   I want to be able to login and logout
