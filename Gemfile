@@ -10,7 +10,11 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
 gem 'devise'
+gem 'formtastic'
+gem 'haml'
+gem 'responders'
 
 group :test do
   gem 'rspec-rails'

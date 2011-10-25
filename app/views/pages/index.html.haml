@@ -1,0 +1,8 @@
+= link_to 'New Page', [ :new, :page ]
+
+%table
+  %thead
+    %th Body
+    %th.actions &nbsp;
+  %tbody
+    = render :partial => 'page', :collection => @pages

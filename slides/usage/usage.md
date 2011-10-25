@@ -7,11 +7,9 @@
 * Reusability again (Declarative)
 
 <!SLIDE usage-learner-title>
-
 # The learner
 
 <!SLIDE usage-learner-example>
-
     @@@ cucumber
     # features/user/authentication.feature
 
@@ -44,3 +42,23 @@
         # ...
       end
     end
+
+<!SLIDE usage-learner-example-3>
+# Problems with Web steps
+
+* Hard to do BDD (Need to know how all of the UI works beforehand)
+* Clients couldn't write scenarios without a developers help, doesn't
+  read well
+* Why not just use capybara directly? It might actually be easier to
+  learn than cucumber
+
+
+<!SLIDE usage-own-title>
+<!SLIDE usage-example>
+<!SLIDE usage-example-2>
+<!SLIDE usage-example-3>
+
+# Problems with Web steps
+
+* Might read a bit better but still written Imperatively (You're
+  describing the actions to perform not the outcomes)
