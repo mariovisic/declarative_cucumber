@@ -1,6 +1,6 @@
 Feature: Authentication (No Web Steps, Declarative)
   As A User
-  In order to gain access to sknet
+  In order to gain access to skynet
   I want to be able to login and logout
 
   Background:

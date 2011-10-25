@@ -13,3 +13,7 @@ h1 {
 .setup-title h1 {
   color: green;
 }
+
+code {
+  font-size: 0.7em;
+}
