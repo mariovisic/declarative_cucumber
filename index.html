@@ -213,7 +213,7 @@ end</code></pre></div>
 <ul>
 <li>Reusing steps in other steps looks ugly and can get messy</li>
 <li>Steps are easier to read but still do not match a story we would
-define for feature</li>
+define for a feature</li>
 <li>Scenarios are still written in imperative style (More on this in a
 second)</li>
 </ul>
@@ -241,7 +241,7 @@ Feature: Authentication (No Web Steps, Declarative)
   In order to gain access to skynet
   I want to be able to login and logout
 
-  Background:
+  Scenario: Logging in
     Given I have a valid account
     Then I should be able to login</code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content declarative-own-example-5" ref="usage/usage/16">
