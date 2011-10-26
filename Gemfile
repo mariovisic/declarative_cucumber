@@ -16,6 +16,8 @@ gem 'formtastic'
 gem 'haml'
 gem 'responders'
 
+gem 'showoff'
+
 group :test do
   gem 'rspec-rails'
   gem 'cucumber-rails'
