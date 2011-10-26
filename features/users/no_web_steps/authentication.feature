@@ -3,6 +3,6 @@ Feature: Authentication (No Web Steps, Declarative)
   In order to gain access to skynet
   I want to be able to login and logout
 
-  Background:
+  Scenario: Logging in
     Given I have a valid account
     Then I should be able to login

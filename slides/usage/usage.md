@@ -95,7 +95,7 @@
 
 * Reusing steps in other steps looks ugly and can get messy
 * Steps are easier to read but still do not match a story we would
-  define for feature
+  define for a feature
 * Scenarios are still written in imperative style (More on this in a
   second)
 
@@ -126,7 +126,7 @@ The individual steps are not as important.
       In order to gain access to skynet
       I want to be able to login and logout
 
-      Background:
+      Scenario: Logging in
         Given I have a valid account
         Then I should be able to login
 
