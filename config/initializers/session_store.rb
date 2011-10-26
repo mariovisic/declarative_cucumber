@@ -1,6 +1,6 @@
 # Be sure to restart your server when you modify this file.
 
-CucumberExamples::Application.config.session_store :cookie_store, key: '_cucumber-examples_session'
+CucumberExamples::Application.config.session_store :cookie_store, :key => '_cucumber-examples_session'
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
