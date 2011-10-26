@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title></title>
+  <title>Cucumber</title>
 
   <meta name="viewport" content="width=device-width"/>
 
@@ -30,6 +30,8 @@
   <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
   <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
 
+  
+    <link rel="stylesheet" href="file/style.css" type="text/css"/>
   
 
   
@@ -75,7 +77,21 @@
 </div>
 
 <div id="slides" class="offscreen" style="display:none;">
-<div class="slide" data-transition="none"><div class="content about" ref="./slides/about/about">
+<div class="slide" data-transition="none"><div class="content title" ref="intro/intro/1">
+<h1>Cucumber</h1>
+
+<h2>A behavior driven development tool</h2>
+
+<p><img src="./file/intro/tfg.png" width="180" height="180" alt="The Frontier Group"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content about-me" ref="intro/intro/2">
+<h1>About Me</h1>
+
+<h2>Mario Visic</h2>
+
+<h3>Developer at the Frontier Group</h3>
+
+<p><img src="./file/intro/mario_visic.jpg" width="1080" height="720" alt="Mario Visic"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content about" ref="about/about">
 <h1>Why Use Cucumber?</h1>
 
 <ul>
@@ -85,25 +101,11 @@
 <li>Side effects may include accidental integration testing</li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content title" ref="./slides/intro/intro/1">
-<h1>Cucumber</h1>
-
-<h2>A behavior driven development tool</h2>
-
-<p><img src="./file/./slides/intro/tfg.png" alt="The Frontier Group"/></p></div>
-</div><div class="slide" data-transition="none"><div class="content about-me" ref="./slides/intro/intro/2">
-<h1>About Me</h1>
-
-<h2>Mario Visic</h2>
-
-<h3>Developer at the Frontier Group</h3>
-
-<p><img src="./file/./slides/intro/mario_visic.jpg" alt="Mario Visic"/></p></div>
-</div><div class="slide" data-transition="none"><div class="content setup-title" ref="./slides/setup/setup/1">
-<p><img src="./file/./slides/setup/cucumber.png" alt="The Frontier Group"/></p>
+</div><div class="slide" data-transition="none"><div class="content setup-title" ref="setup/setup/1">
+<p><img src="./file/setup/cucumber.png" width="300" height="128" alt="The Frontier Group"/></p>
 
 <h1>Setup</h1></div>
-</div><div class="slide" data-transition="none"><div class="content setup" ref="./slides/setup/setup/2">
+</div><div class="slide" data-transition="none"><div class="content setup" ref="setup/setup/2">
 <pre class="sh_ruby"><code># In your Gemfile:
 gem 'cucumber-rails' # For rails projects
 gem 'cucumber'       # Otherwise
@@ -120,19 +122,7 @@ rake db:test:prepare
 
 # To run the test suite
 cucumber</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content thanks" ref="./slides/thanks/thanks/1">
-<p>All code snippets are working examples from:<br/>
-<a href="https://github.com/mariovisic/Cucumber-Examples">https://github.com/mariovisic/Cucumber-Examples</a></p></div>
-</div><div class="slide" data-transition="none"><div class="content resources" ref="./slides/thanks/thanks/2">
-<h1>Resources</h1>
-
-<ul>
-<li><a href="https://github.com/cucumber/cucumber/wiki/Cucumber-Backgrounder">https://github.com/cucumber/cucumber/wiki/Cucumber-Backgrounder</a></li>
-<li><a href="https://github.com/cucumber/cucumber-rails/issues/174">https://github.com/cucumber/cucumber-rails/issues/174</a></li>
-<li><a href="http://aslakhellesoy.com/post/11055981222/the-training-wheels-came-off">http://aslakhellesoy.com/post/11055981222/the-training-wheels-came-off</a></li>
-</ul>
-</div>
-</div><div class="slide" data-transition="none"><div class="content usage-title" ref="./slides/usage/usage/1">
+</div><div class="slide" data-transition="none"><div class="content usage-title" ref="usage/usage/1">
 <h1>The 3 stages of development</h1>
 
 <ul>
@@ -141,9 +131,9 @@ cucumber</code></pre></div>
 <li>Writing Declarative steps</li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content usage-learner-title" ref="./slides/usage/usage/2">
+</div><div class="slide" data-transition="none"><div class="content usage-learner-title" ref="usage/usage/2">
 <h1>Using web steps (Imperative)</h1></div>
-</div><div class="slide" data-transition="none"><div class="content usage-learner-example" ref="./slides/usage/usage/3">
+</div><div class="slide" data-transition="none"><div class="content usage-learner-example" ref="usage/usage/3">
 <pre class="sh_cucumber"><code>
 # features/user/authentication.feature
 Feature: Authentication (web steps)
@@ -155,7 +145,7 @@ Feature: Authentication (web steps)
     Given the following user exists:
       | email   | password |
       | z@b.com | giraffes |</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content usage-learner-example-1b" ref="./slides/usage/usage/4">
+</div><div class="slide" data-transition="none"><div class="content usage-learner-example-1b" ref="usage/usage/4">
 <pre class="sh_cucumber"><code>
 # features/user/authentication.feature
 Scenario: Logging in
@@ -164,7 +154,7 @@ Scenario: Logging in
   And I fill in "Password" with "giraffes"
   And I press "Sign in"
   Then I should see "Signed in"</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content usage-learner-example-2" ref="./slides/usage/usage/5">
+</div><div class="slide" data-transition="none"><div class="content usage-learner-example-2" ref="usage/usage/5">
 <pre class="sh_ruby"><code># features/support/paths.rb
 module NavigationHelpers
   def path_to(page_name)
@@ -176,7 +166,7 @@ module NavigationHelpers
     # ...
   end
 end</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content usage-learner-example-3" ref="./slides/usage/usage/6">
+</div><div class="slide" data-transition="none"><div class="content usage-learner-example-3" ref="usage/usage/6">
 <h1>Problems with web steps</h1>
 
 <ul>
@@ -187,9 +177,9 @@ end</code></pre></div>
 learn than cucumber</li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content usage-own-title" ref="./slides/usage/usage/7">
+</div><div class="slide" data-transition="none"><div class="content usage-own-title" ref="usage/usage/7">
 <h1>Using web steps as well as defining your own steps (Imperative)</h1></div>
-</div><div class="slide" data-transition="none"><div class="content usage-example" ref="./slides/usage/usage/8">
+</div><div class="slide" data-transition="none"><div class="content usage-example" ref="usage/usage/8">
 <pre class="sh_cucumber"><code>
 # features/user/authentication.feature
 Feature: Authentication (web steps + Own)
@@ -203,7 +193,7 @@ Feature: Authentication (web steps + Own)
     When I fill in my user details
     And I press "Sign in"
     Then I should see "Signed in"</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content usage-example-2" ref="./slides/usage/usage/9">
+</div><div class="slide" data-transition="none"><div class="content usage-example-2" ref="usage/usage/9">
 <pre class="sh_ruby"><code># features/step_definitions/authentication.rb
 Given /^I have a valid account$/ do
   @current_email = 'my@email.com'
@@ -217,7 +207,7 @@ When /^I fill in my user details$/ do
   Then %{I fill in "Email" with "#{@current_email}"}
   Then %{I fill in "Password" with "#{@current_password}"}
 end</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content usage-example-3" ref="./slides/usage/usage/10">
+</div><div class="slide" data-transition="none"><div class="content usage-example-3" ref="usage/usage/10">
 <h1>Problems with keeping web steps</h1>
 
 <ul>
@@ -228,14 +218,14 @@ define for feature</li>
 second)</li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-title" ref="./slides/usage/usage/11">
+</div><div class="slide" data-transition="none"><div class="content declarative-own-title" ref="usage/usage/11">
 <h1>Writing Declarative steps (Without any web steps)</h1></div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-example" ref="./slides/usage/usage/12">
+</div><div class="slide" data-transition="none"><div class="content declarative-own-example" ref="usage/usage/12">
 <h1>But firstly, what is Imperative and Declarative?</h1></div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-example-2" ref="./slides/usage/usage/13">
+</div><div class="slide" data-transition="none"><div class="content declarative-own-example-2" ref="usage/usage/13">
 <p>Imperative means that you write each step that needs to be taken to
 complete the outcome, for example "fill in the email form input".</p></div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-example-3" ref="./slides/usage/usage/14">
+</div><div class="slide" data-transition="none"><div class="content declarative-own-example-3" ref="usage/usage/14">
 <p>Declarative means that you write the outcome for the scenario,
 which is how we write our user stories and how a client thinks of the
 parts of their project.</p>
@@ -244,7 +234,7 @@ parts of their project.</p>
 account, they should be able to login"</p>
 
 <p>The individual steps are not as important.</p></div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-example-4" ref="./slides/usage/usage/15">
+</div><div class="slide" data-transition="none"><div class="content declarative-own-example-4" ref="usage/usage/15">
 <pre class="sh_cucumber"><code># features/user/authentication.feature
 Feature: Authentication (No Web Steps, Declarative)
   As A User
@@ -254,7 +244,7 @@ Feature: Authentication (No Web Steps, Declarative)
   Background:
     Given I have a valid account
     Then I should be able to login</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-example-5" ref="./slides/usage/usage/16">
+</div><div class="slide" data-transition="none"><div class="content declarative-own-example-5" ref="usage/usage/16">
 <pre class="sh_ruby"><code># features/step_definitions/authentication.rb
 Then /^I should be able to login$/ do
   visit new_user_session_path
@@ -262,9 +252,9 @@ Then /^I should be able to login$/ do
   click_button 'Sign in'
   page.should have_content 'Signed in'
 end</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-example-6" ref="./slides/usage/usage/17">
+</div><div class="slide" data-transition="none"><div class="content declarative-own-example-6" ref="usage/usage/17">
 <h1>Where do we put the <code>fill_in_my_details</code> method?</h1></div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-example-6" ref="./slides/usage/usage/18">
+</div><div class="slide" data-transition="none"><div class="content declarative-own-example-6" ref="usage/usage/18">
 <pre class="sh_ruby"><code># features/support/helpers/authentication_helper.rb
 module AuthenticationHelper
   def fill_in_my_details
@@ -274,13 +264,25 @@ module AuthenticationHelper
 end
 
 World(AuthenticationHelper)</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-example-7" ref="./slides/usage/usage/19">
+</div><div class="slide" data-transition="none"><div class="content declarative-own-example-7" ref="usage/usage/19">
 <h1>Why is Declarative better?</h1>
 
 <ul>
 <li>It's easy for clients and developers to read</li>
 <li>Scenarios can match actual user stories</li>
 <li>Feature files only need altering if the user stories change.</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content thanks" ref="thanks/thanks/1">
+<p>All code snippets are working examples from:<br/>
+<a href="https://github.com/mariovisic/Cucumber-Examples">https://github.com/mariovisic/Cucumber-Examples</a></p></div>
+</div><div class="slide" data-transition="none"><div class="content resources" ref="thanks/thanks/2">
+<h1>Resources</h1>
+
+<ul>
+<li><a href="https://github.com/cucumber/cucumber/wiki/Cucumber-Backgrounder">https://github.com/cucumber/cucumber/wiki/Cucumber-Backgrounder</a></li>
+<li><a href="https://github.com/cucumber/cucumber-rails/issues/174">https://github.com/cucumber/cucumber-rails/issues/174</a></li>
+<li><a href="http://aslakhellesoy.com/post/11055981222/the-training-wheels-came-off">http://aslakhellesoy.com/post/11055981222/the-training-wheels-came-off</a></li>
 </ul>
 </div>
 </div></div>
