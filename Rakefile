@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-CucumberExamples::Application.load_tasks
+DeclarativeCucumber::Application.load_tasks

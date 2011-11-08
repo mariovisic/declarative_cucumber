@@ -1,1 +1,1 @@
-rvm use @cucumber-examples --create
+rvm use @declarative_cucumber --create
