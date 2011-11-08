@@ -1,5 +1,5 @@
 <!SLIDE usage-title>
-# The 3 stages of development
+# The 3 stages I went through
 
 * Using web steps (Imperative)
 * Using web steps as well as defining your own steps (Imperative)

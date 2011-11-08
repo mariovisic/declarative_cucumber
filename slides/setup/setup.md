@@ -1,7 +1,7 @@
 <!SLIDE setup-title>
 
-![The Frontier Group](cucumber.png)
-# Setup
+# Using
+![Cucumber](cucumber.png)
 
 <!SLIDE setup>
 
