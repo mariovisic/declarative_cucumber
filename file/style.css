@@ -6,9 +6,13 @@ h1 {
   color: #0099dd;
 }
 
+
+.content .about-me {
+  margin-top: 0px; !important
+}
 .about-me img{
-  width: 80%;
-  height: 80%;
+  width: 392px;
+  height: 350px;
 }
 
 .setup-title h1 {
