@@ -1,4 +1,4 @@
-CucumberExamples::Application.routes.draw do
+DeclarativeCucumber::Application.routes.draw do
   root :to => 'pages#index'
 
   devise_for :users

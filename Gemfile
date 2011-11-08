@@ -17,6 +17,7 @@ gem 'haml'
 gem 'responders'
 
 gem 'showoff'
+gem 'rmagick'
 
 group :test do
   gem 'rspec-rails'

@@ -4,7 +4,7 @@ These slides are online at:
 [http://mariovisic.github.com/declarative_cucumber/](http://mariovisic.github.com/declarative_cucumber/)
 
 All code snippets are working examples from:  
-[https://github.com/mariovisic/Cucumber-Examples](https://github.com/mariovisic/Cucumber-Examples)
+[https://github.com/mariovisic/declarative_cucumber](https://github.com/mariovisic/declarative_cucumber)
 
 <!SLIDE resources>
 
