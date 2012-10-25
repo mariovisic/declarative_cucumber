@@ -59,11 +59,12 @@
 
 <!SLIDE usage-own-title>
 # Surely we can reduce some of these steps?
+* Also why is the users email and password important? Surely I shouldn't have to write that?
 <!SLIDE usage-example>
     @@@ cucumber
 
     # features/user/authentication.feature
-    Feature: Authentication (web steps + Own)
+    Feature: Authentication (Imperative with Shortcuts)
       As A User
       In order to gain access to skynet
       I want to be able to login and logout
