@@ -77,32 +77,44 @@
 </div>
 
 <div id="slides" class="offscreen" style="display:none;">
-<div class="slide" data-transition="none"><div class="content title" ref="intro/intro/1">
+<div class="slide" data-transition="none"><div class="content title" ref="intro/intro">
 <h1>Declarative Cucumber</h1>
 
-<h2>Neat ways to use our favourite behavior driven development tool</h2></div>
-</div><div class="slide" data-transition="none"><div class="content about-me" ref="intro/intro/2">
-<h1>About Me</h1>
+<h2>Neat ways to use our favourite behavior driven development tool</h2>
 
-<p><img src="./file/intro/mario_visic.jpg" width="392" height="350" alt="Mario Visic"/></p>
+<h3>by @mariovisic</h3></div>
+</div><div class="slide" data-transition="none"><div class="content about" ref="about/about/1">
+<h1>Behavior Driven Development? (BDD)</h1>
 
-<h2>Mario Visic</h2>
+<ul>
+<li>1) Failing acceptance test (Given I am a Visitor; Then I can view the homepage)</li>
+<li>2) Create a Failing unit test and make it pass</li>
+<li>3) Repeat steps 2 a few times</li>
+<li>3) Passing acceptance test</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content why-not-cucumber" ref="about/about/2">
+<h1>Why not use cucumber?</h1>
 
-<h3>Developer at Sentia Australia</h3>
-
-<h3>@mariovisic on Twitter</h3></div>
-</div><div class="slide" data-transition="none"><div class="content about" ref="about/about">
+<ul>
+<li>Another DSL to learn</li>
+<li>Capyabara + RSpec (insert other tool) is good enough</li>
+<li>No one to read or write the steps (No tickets? Cards? Really?)</li>
+<li><strong>The cucumber steps have to be written differently to what the stakeholders give us!</strong> &lt;== Can fix this</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content why-cucumber" ref="about/about/3">
 <h1>Why Use Cucumber?</h1>
 
 <ul>
 <li>Promotes Behavior Driven Development (BDD)</li>
 <li>Encourages minimal implementations</li>
-<li>Written in a language clients can read and write</li>
+<li>Written in a language stake holders can read and write</li>
 <li>Side effects may include accidental integration testing</li>
 </ul>
 </div>
 </div><div class="slide" data-transition="none"><div class="content setup-title" ref="setup/setup/1">
-<h1>Using</h1>
+<h1>Installing Cucumber</h1>
 
 <p><img src="./file/setup/cucumber.png" width="300" height="128" alt="Cucumber"/></p></div>
 </div><div class="slide" data-transition="none"><div class="content setup" ref="setup/setup/2">
@@ -122,21 +134,38 @@ rake db:test:prepare
 
 # To run the test suite
 cucumber</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content usage-title" ref="usage/usage/1">
-<h1>The 3 stages I went through</h1>
+</div><div class="slide" data-transition="none"><div class="content web-steps" ref="usage/usage/1">
+<h1>"Cucumber is hard, let's make it easier!"</h1>
 
 <ul>
-<li>Using web steps (Imperative)</li>
-<li>Using web steps as well as defining your own steps (Imperative)</li>
-<li>Writing Declarative steps</li>
+<li>Learning all this is hard, a new DSL, BDD, all these steps</li>
+<li>web_steps.rb were added to make it easier</li>
+<li>But they just made everyone write their features badly</li>
+<li>Now no longer generated (old projects might still have it)</li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content usage-learner-title" ref="usage/usage/2">
-<h1>Using web steps (Imperative)</h1></div>
-</div><div class="slide" data-transition="none"><div class="content usage-learner-example" ref="usage/usage/3">
+</div><div class="slide" data-transition="none"><div class="content remove-web-steps" ref="usage/usage/2">
+<p><img src="./file/usage/remove_web_steps.png" width="1038" height="1029" alt="Remove web steps"/></p></div>
+</div><div class="slide" data-transition="none"><div class="content usage-title" ref="usage/usage/3">
+<h1>Examples</h1>
+
+<ul>
+<li>Starting with what you should avoid doing</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content usage-learner-title" ref="usage/usage/4">
+<h1>Imperative</h1>
+
+<ul>
+<li><p>Imperative means that you write each step that needs to be taken to complete the outcome, for example:</p></li>
+<li><p>"Fill in the email form input"</p></li>
+<li>"Press the button submit button"</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content usage-learner-example" ref="usage/usage/5">
 <pre class="sh_cucumber"><code>
 # features/user/authentication.feature
-Feature: Authentication (web steps)
+Feature: Authentication (Imperative)
   As A User
   In order to gain access to skynet
   I want to be able to login and logout
@@ -145,7 +174,7 @@ Feature: Authentication (web steps)
     Given the following user exists:
       | email   | password |
       | z@b.com | giraffes |</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content usage-learner-example-1b" ref="usage/usage/4">
+</div><div class="slide" data-transition="none"><div class="content usage-learner-example-1b" ref="usage/usage/6">
 <pre class="sh_cucumber"><code>
 # features/user/authentication.feature
 Scenario: Logging in
@@ -154,35 +183,27 @@ Scenario: Logging in
   And I fill in "Password" with "giraffes"
   And I press "Sign in"
   Then I should see "Signed in"</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content usage-learner-example-2" ref="usage/usage/5">
-<pre class="sh_ruby"><code># features/support/paths.rb
-module NavigationHelpers
-  def path_to(page_name)
-    # ...
-
-    when /^the member(s?) sign in page$/
-      new_member_session_path
-
-    # ...
-  end
-end</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content usage-learner-example-3" ref="usage/usage/6">
-<h1>Problems with web steps</h1>
+</div><div class="slide" data-transition="none"><div class="content usage-learner-example-3" ref="usage/usage/7">
+<h1>Problems with imperative steps</h1>
 
 <ul>
-<li>It doesn't read well in English</li>
+<li>It doesn't read well in English (too long)</li>
 <li>It's hard to use it for BDD (Need to know how all of the UI works beforehand)</li>
 <li>Clients couldn't write scenarios without a developers help</li>
-<li>If we can't read it then why not just use capybara directly? It might actually be easier to
-learn than cucumber</li>
+<li>If we can't read it then why not just use capybara directly? It's going to be much easier than learning cucumber</li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content usage-own-title" ref="usage/usage/7">
-<h1>Using web steps as well as defining your own steps (Imperative)</h1></div>
-</div><div class="slide" data-transition="none"><div class="content usage-example" ref="usage/usage/8">
+</div><div class="slide" data-transition="none"><div class="content usage-own-title" ref="usage/usage/8">
+<h1>Surely we can reduce some of these steps?</h1>
+
+<ul>
+<li>Also why is the users email and password important? Surely I shouldn't have to write that?</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content usage-example" ref="usage/usage/9">
 <pre class="sh_cucumber"><code>
 # features/user/authentication.feature
-Feature: Authentication (web steps + Own)
+Feature: Authentication (Imperative with Shortcuts)
   As A User
   In order to gain access to skynet
   I want to be able to login and logout
@@ -193,7 +214,7 @@ Feature: Authentication (web steps + Own)
     When I fill in my user details
     And I press "Sign in"
     Then I should see "Signed in"</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content usage-example-2" ref="usage/usage/9">
+</div><div class="slide" data-transition="none"><div class="content usage-example-2" ref="usage/usage/10">
 <pre class="sh_ruby"><code># features/step_definitions/authentication.rb
 Given /^I have a valid account$/ do
   @current_email = 'my@email.com'
@@ -201,31 +222,24 @@ Given /^I have a valid account$/ do
   @current_user = FactoryGirl.create(:user,
     :email =&gt; @current_email,
     :password =&gt; @current_password)
-end
-
-When /^I fill in my user details$/ do
-  Then %{I fill in "Email" with "#{@current_email}"}
-  Then %{I fill in "Password" with "#{@current_password}"}
 end</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content usage-example-3" ref="usage/usage/10">
-<h1>Problems with keeping web steps</h1>
+</div><div class="slide" data-transition="none"><div class="content usage-example-3" ref="usage/usage/11">
+<pre class="sh_ruby"><code># Please do not do this. More on this later.
+When /^I fill in my user details$/ do
+  step %{I fill in "Email" with "#{@current_email}"}
+  step %{I fill in "Password" with "#{@current_password}"}
+end</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content usage-example-4" ref="usage/usage/12">
+<h1>Problems with keeping imperative style</h1>
 
 <ul>
-<li>Reusing steps in other steps looks ugly and can get messy</li>
 <li>Steps are easier to read but still do not match a story we would
 define for a feature</li>
-<li>Scenarios are still written in imperative style (More on this in a
-second)</li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-title" ref="usage/usage/11">
-<h1>Writing Declarative steps (Without any web steps)</h1></div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-example" ref="usage/usage/12">
-<h1>But firstly, what is Imperative and Declarative?</h1></div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-example-2" ref="usage/usage/13">
-<p>Imperative means that you write each step that needs to be taken to
-complete the outcome, for example "fill in the email form input".</p></div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-example-3" ref="usage/usage/14">
+</div><div class="slide" data-transition="none"><div class="content declarative-own-title" ref="usage/usage/13">
+<h1>Delclarative Steps</h1>
+
 <p>Declarative means that you write the outcome for the scenario,
 which is how we write our user stories and how a client thinks of the
 parts of their project.</p>
@@ -234,7 +248,7 @@ parts of their project.</p>
 account, they should be able to login"</p>
 
 <p>The individual steps are not as important.</p></div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-example-4" ref="usage/usage/15">
+</div><div class="slide" data-transition="none"><div class="content declarative-own-example-4" ref="usage/usage/14">
 <pre class="sh_cucumber"><code># features/user/authentication.feature
 Feature: Authentication (No Web Steps, Declarative)
   As A User
@@ -244,7 +258,7 @@ Feature: Authentication (No Web Steps, Declarative)
   Scenario: Logging in
     Given I have a valid account
     Then I should be able to login</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-example-5" ref="usage/usage/16">
+</div><div class="slide" data-transition="none"><div class="content declarative-own-example-5" ref="usage/usage/15">
 <pre class="sh_ruby"><code># features/step_definitions/authentication.rb
 Then /^I should be able to login$/ do
   visit new_user_session_path
@@ -252,9 +266,9 @@ Then /^I should be able to login$/ do
   click_button 'Sign in'
   page.should have_content 'Signed in'
 end</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-example-6" ref="usage/usage/17">
+</div><div class="slide" data-transition="none"><div class="content declarative-own-example-6" ref="usage/usage/16">
 <h1>Where do we put the <code>fill_in_my_details</code> method?</h1></div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-example-6" ref="usage/usage/18">
+</div><div class="slide" data-transition="none"><div class="content declarative-own-example-6" ref="usage/usage/17">
 <pre class="sh_ruby"><code># features/support/helpers/authentication_helper.rb
 module AuthenticationHelper
   def fill_in_my_details
@@ -264,7 +278,7 @@ module AuthenticationHelper
 end
 
 World(AuthenticationHelper)</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content declarative-own-example-7" ref="usage/usage/19">
+</div><div class="slide" data-transition="none"><div class="content declarative-own-example-7" ref="usage/usage/18">
 <h1>Why is Declarative better?</h1>
 
 <ul>
