@@ -1,6 +1,6 @@
 <!SLIDE setup-title>
 
-# Using
+# Installing Cucumber
 ![Cucumber](cucumber.png)
 
 <!SLIDE setup>

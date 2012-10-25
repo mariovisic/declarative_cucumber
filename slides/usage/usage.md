@@ -1,18 +1,33 @@
-<!SLIDE usage-title>
-# The 3 stages I went through
+<!SLIDE web-steps>
+# "Cucumber is hard, let's make it easier!"
 
-* Using web steps (Imperative)
-* Using web steps as well as defining your own steps (Imperative)
-* Writing Declarative steps
+* Learning all this is hard, a new DSL, BDD, all these steps
+* web_steps.rb were added to make it easier
+* But they just made everyone write their features badly
+* Now no longer generated (old projects might still have it)
+
+<!SLIDE remove-web-steps>
+
+![Remove web steps](remove_web_steps.png)
+
+<!SLIDE usage-title>
+# Examples
+
+* Starting with what you should avoid doing
 
 <!SLIDE usage-learner-title>
-# Using web steps (Imperative)
+# Imperative
+
+* Imperative means that you write each step that needs to be taken to complete the outcome, for example:
+
+* "Fill in the email form input"
+* "Press the button submit button"
 
 <!SLIDE usage-learner-example>
     @@@ cucumber
 
     # features/user/authentication.feature
-    Feature: Authentication (web steps)
+    Feature: Authentication (Imperative)
       As A User
       In order to gain access to skynet
       I want to be able to login and logout
@@ -33,32 +48,17 @@
       And I press "Sign in"
       Then I should see "Signed in"
 
-<!SLIDE usage-learner-example-2>
-    @@@ ruby
-    # features/support/paths.rb
-    module NavigationHelpers
-      def path_to(page_name)
-        # ...
-
-        when /^the member(s?) sign in page$/
-          new_member_session_path
-
-        # ...
-      end
-    end
-
 <!SLIDE usage-learner-example-3>
-# Problems with web steps
+# Problems with imperative steps
 
-* It doesn't read well in English
+* It doesn't read well in English (too long)
 * It's hard to use it for BDD (Need to know how all of the UI works beforehand)
 * Clients couldn't write scenarios without a developers help
-* If we can't read it then why not just use capybara directly? It might actually be easier to
-  learn than cucumber
+* If we can't read it then why not just use capybara directly? It's going to be much easier than learning cucumber
 
 
 <!SLIDE usage-own-title>
-# Using web steps as well as defining your own steps (Imperative)
+# Surely we can reduce some of these steps?
 <!SLIDE usage-example>
     @@@ cucumber
 
@@ -85,29 +85,23 @@
         :password => @current_password)
     end
 
+<!SLIDE usage-example-3>
+    @@@ ruby
+    # Please do not do this. More on this later.
     When /^I fill in my user details$/ do
-      Then %{I fill in "Email" with "#{@current_email}"}
-      Then %{I fill in "Password" with "#{@current_password}"}
+      step %{I fill in "Email" with "#{@current_email}"}
+      step %{I fill in "Password" with "#{@current_password}"}
     end
 
-<!SLIDE usage-example-3>
-# Problems with keeping web steps
+<!SLIDE usage-example-4>
+# Problems with keeping imperative style
 
-* Reusing steps in other steps looks ugly and can get messy
 * Steps are easier to read but still do not match a story we would
   define for a feature
-* Scenarios are still written in imperative style (More on this in a
-  second)
 
 <!SLIDE declarative-own-title>
-# Writing Declarative steps (Without any web steps)
+# Delclarative Steps
 
-<!SLIDE declarative-own-example>
-# But firstly, what is Imperative and Declarative?
-<!SLIDE declarative-own-example-2>
-Imperative means that you write each step that needs to be taken to
-complete the outcome, for example "fill in the email form input".
-<!SLIDE declarative-own-example-3>
 Declarative means that you write the outcome for the scenario,
 which is how we write our user stories and how a client thinks of the
 parts of their project.
